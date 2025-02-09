@@ -1,0 +1,7 @@
+@import "tailwindcss";
+@theme {
+    --font-Russo: "Russo One", serif;
+    --font-Poppins: "Poppins", serif;
+    --font-EB-Garamond: "EB Garamond", serif;
+    --font-Roboto: "Roboto", serif;
+}
