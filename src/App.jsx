@@ -6,10 +6,11 @@ import copy from "copy-html-to-clipboard";
 function App() {
   const [todos, setTodos] = useState([]);
   const [selectedItems, setSelectedItems] = useState([]);
-  const [backgroundColor, setBackgroundColor] = useState("");
-  const [textColor, setTextColor] = useState("#000000");
-  const [fontStyle, setFontStyle] = useState("");
+  const [backgroundColor, setBackgroundColor] = useState("#11111");
+  const [textColor, setTextColor] = useState("#fff");
+  const [fontStyle, setFontStyle] = useState("text-Roboto");
   const [borderWidth, setBorderWidth] = useState(1);
+  const [paddingWidth, setPaddingWidth] = useState(1);
 
   const items = [
     {
@@ -111,6 +112,15 @@ function App() {
                 className="p-1 border rounded"
               />
             </li>
+            <li className="flex gap-4 items-center">
+              <p className="text-start">Select Padding Width:</p>
+              <input
+                type="number"
+                value={paddingWidth}
+                onChange={(e) => setPaddingWidth(Number(e.target.value))}
+                className="p-1 border rounded"
+              />
+            </li>
           </ul>
           <h1 className="text-2xl font-bold mb-5">Select Header</h1>
           <div className="flex space-x-4 mb-5">
@@ -154,6 +164,7 @@ function App() {
                     backgroundColor,
                     color: textColor,
                     borderWidth: `${borderWidth}px`,
+                    padding: `${paddingWidth}px`,
                   }}
                 >
                   <span>{todo}</span>
